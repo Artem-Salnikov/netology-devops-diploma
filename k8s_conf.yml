@@ -1,0 +1,22 @@
+---
+- name: get conf
+  hosts: all
+  become: true
+  tasks:
+  - name: get conf
+    ansible.builtin.fetch:
+      src: /etc/kubernetes/admin.conf
+      dest: ~/.kube/config
+      flat: yes
+
+- name: change local kube config
+  hosts: localhost
+  vars:
+    ip: "{{ lookup('env','IP_MASTER') }}"
+  tasks:
+  - name: change local kube config
+    replace:
+      path: ~/.kube/config
+      regexp: '127.0.0.1'
+      replace: "{{ ip }}"
+
