@@ -6,13 +6,13 @@ terraform {
   }
   required_version = ">= 0.13"
 
-  cloud {
-    organization = "Asalnikov"
+cloud {
+  organization = "Asalnikov"
 
-    workspaces {
-      tags = ["stage", "prod"]
-    }
-  }
+  workspaces {
+    tags = ["stage", "prod"]
+   }
+ }
 }
   # backend "s3" {
   #   endpoint   = "storage.yandexcloud.net"

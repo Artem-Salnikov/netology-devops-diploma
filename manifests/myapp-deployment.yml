@@ -17,5 +17,12 @@ spec:
       containers:
       - name: myapp-nginx
         image: artemsalnikov/myapp-nginx:latest
+        resources:
+          requests:
+            memory: "24Mi"
+            cpu: "32m"
+          limits:
+            memory: "48Mi"
+            cpu: "64m"
         ports:
         - containerPort: 80
