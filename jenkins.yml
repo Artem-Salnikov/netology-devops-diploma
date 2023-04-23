@@ -11,11 +11,6 @@
       state: directory
       mode: '0755'
 
-  - name: Copy config from local to jenkins
-    ansible.builtin.copy:
-      src: ~/.kube/{{ workspace }}/config
-      dest: /home/ubuntu/.kube/config
-
   - name: add key for repository
     ansible.builtin.shell: |
       curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \ 
@@ -67,6 +62,14 @@
     ansible.builtin.systemd:
       name: jenkins
       state: started
+
+  - name: Copy config from local to jenkins
+    ansible.builtin.copy:
+      src: ~/.kube/{{ workspace }}/config
+      dest: /var/lib/jenkins/config
+      owner: jenkins
+      group: jenkins
+      mode: '0644'
 
   - name: Install docker
     apt:
