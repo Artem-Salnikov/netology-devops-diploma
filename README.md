@@ -144,7 +144,7 @@
 ![Netdata](/project_description/images/terraform_cloud2.jpg)
 3. Репозиторий с конфигурацией ansible, если был выбран способ создания Kubernetes кластера при помощи ansible.
 
-Кластер Kubernetes создается с помощью [kubespray](https://github.com/kubernetes-sigs/kubespray "kubespray"), вся конфигурация содержится в [inventory файле](https://github.com/Artem-Salnikov/netology-devops-diploma/blob/main/generate_inventory.sh), который генерируется с помощью [скрипта](https://github.com/Artem-Salnikov/netology-devops-diploma/blob/main/generate_inventory.sh).
+Кластер Kubernetes создается с помощью [kubespray](https://github.com/kubernetes-sigs/kubespray "kubespray"), вся конфигурация содержится в [inventory файле](https://github.com/Artem-Salnikov/netology-devops-diploma/blob/main/project_description/hosts.ini), который генерируется с помощью [скрипта](https://github.com/Artem-Salnikov/netology-devops-diploma/blob/main/generate_inventory.sh).
 
 
 4. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image.
